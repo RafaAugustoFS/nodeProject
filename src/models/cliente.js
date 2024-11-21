@@ -6,7 +6,7 @@ const Cliente = sequelize.define('cliente',{
         type: DataTypes.STRING(100),
         allowNull: false
     },
-    email:{
+    email_cliente:{
         type: DataTypes.STRING,
         allowNull: false,
         unique:true

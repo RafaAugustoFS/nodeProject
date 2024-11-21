@@ -1,4 +1,5 @@
 const Admin = require("../models/admin");
+const bcrypt = require('bcryptjs');
 
 const adminService = {
   create: async (admin) => {
@@ -16,6 +17,7 @@ const adminService = {
         senha: senhaCrypto,
       });
     } catch (error) {
+      console.log(error)
       throw new Error("Erro ao criar o administrador!");
     }
   },

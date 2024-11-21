@@ -12,7 +12,7 @@ const Transacao = sequelize.define('transacao',{
         }
     },
     tipo_conta:{
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM ("Corrente", "Poupança", "Salário", "Mista", "Digital", "Universitária", "Conjunta", "Solidária"),
         allowNull: false
     },
     tipo_transacao:{
@@ -27,5 +27,5 @@ const Transacao = sequelize.define('transacao',{
         type: DataTypes.DATE,
         allowNull:false
     }
-})
+});
 module.exports = Transacao;

@@ -6,7 +6,7 @@ const adminService = require("../services/adminService");
 const adminController = {
   login: async (req, res) => {
     try {
-      const {email,password} = req.body;
+      const {email,senha} = req.body;
 
       const admin = await Admin.findOne({ where :{ email } });
 
@@ -16,7 +16,7 @@ const adminController = {
           })
       }
 
-      const isValida = await bcrypt.compare(password, admin.password);
+      const isValida = await bcrypt.compare(senha, admin.senha);
       
        if(!isValida){
           return res.status(400).json({
