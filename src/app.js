@@ -9,9 +9,10 @@ app.use(express.json());
 app.use("/api", routes);
 
 sequelize
-  .sync()
-  .then(() => {
+  .authenticate()
+  .then(async () => {
     console.log("Conexão com o banco de dados com êxito!");
+    await sequelize.sync({});
   })
   .catch((err) => {
     console.error("Erro ao conectar com o banco: ", err);
